@@ -1,0 +1,21 @@
+.App {
+  text-align: center;
+  font-family: "Comic Sans MS", cursive, sans-serif;
+}
+
+.App-header {
+  background-color: #222;
+  height: 120px;
+  padding: 30px;
+  color: white;
+}
+
+.App-title {
+  font-size: 3em;
+  font-family: "Courier New", Courier, monospace;
+}
+
+.horizontal-line {
+  width: 80%;
+  border-width: 2px;
+}
