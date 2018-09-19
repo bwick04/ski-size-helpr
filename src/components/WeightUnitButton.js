@@ -4,36 +4,37 @@ import { Button, ButtonGroup } from "reactstrap";
 class WeightUnitButton extends Component {
   constructor(props) {
     super(props);
-
-    this.state = { cSelected: [] };
-
-    this.onRadioButtonClick = this.onRadioButtonClick.bind(this);
+    this.handleWeightUnitClick = this.handleWeightUnitClick.bind(this);
   }
 
-  onRadioButtonClick(rSelected) {
-    this.setState({ rSelected });
+  handleWeightUnitClick(e) {
+    this.props.onWeightUnitClick(e.target.value);
   }
 
   render() {
+    const weightUnit = this.props.weightUnit;
+
     return (
       <div>
         <ButtonGroup>
           <Button
             color="primary"
-            onClick={() => this.onRadioButtonClick("lbs")}
-            active={this.state.rSelected === "lbs"}
+            value={"lbs"}
+            onClick={this.handleWeightUnitClick}
+            active={weightUnit === "lbs"}
           >
             lbs
           </Button>
           <Button
             color="primary"
-            onClick={() => this.onRadioButtonClick("kg")}
-            active={this.state.rSelected === "kg"}
+            value={"kg"}
+            onClick={this.handleWeightUnitClick}
+            active={weightUnit === "kg"}
           >
             kg
           </Button>
         </ButtonGroup>
-        <p>Selected: {this.state.rSelected}</p>
+        <p>Child - Selected: {weightUnit}</p>
       </div>
     );
   }

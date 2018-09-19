@@ -3,28 +3,26 @@ import React, { Component } from "react";
 class HeightForm extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      value: ""
-    };
-
-    this.handleChange = this.handleChange.bind(this);
+    this.handleHeightChange = this.handleHeightChange.bind(this);
   }
 
-  handleChange(event) {
-    this.setState({ value: event.target.value });
+  handleHeightChange(e) {
+    this.props.onHeightChange(e.target.value);
   }
 
   render() {
+    const height = this.props.height;
+
     return (
       <div>
-        <label for="height">
+        <label form="height">
           Height:
           <input
             type="text"
-            value={this.state.value}
-            onChange={this.handleChange}
+            placeholder="enter your height"
+            value={height}
+            onChange={this.handleHeightChange}
           />
-          <p>Your height is: {this.state.value}</p>
         </label>
       </div>
     );

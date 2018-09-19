@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "./App.css";
-import SubmitForm from "./components/SubmitForm";
+import SubmitContainer from "./components/SubmitContainer";
 
 class App extends Component {
   render() {
@@ -14,9 +14,9 @@ class App extends Component {
           This website is designed to help you find the right size skis to add
           to that quiver!
         </h3>
-        <hr class="horizontal-line" />
+        <hr className="horizontal-line" />
         <br />
-        <SubmitForm />
+        <SubmitContainer />
         <br />
       </div>
     );

@@ -4,36 +4,39 @@ import { Button, ButtonGroup } from "reactstrap";
 class HeightUnitButton extends Component {
   constructor(props) {
     super(props);
-
-    this.state = { cSelected: [] };
-
-    this.onRadioButtonClick = this.onRadioButtonClick.bind(this);
+    this.handleHeightUnitClick = this.handleHeightUnitClick.bind(this);
   }
 
-  onRadioButtonClick(rSelected) {
-    this.setState({ rSelected });
+  // Creating an event handle for onClick event from buttons
+  handleHeightUnitClick(e) {
+    // getting prop from parent (must match name from parent) and assigning value from button onClick event
+    this.props.onHeightUnitClick(e.target.value);
   }
 
   render() {
+    // setting heightUnit from parent class being passed as a prop
+    const heightUnit = this.props.heightUnit;
+
     return (
       <div>
         <ButtonGroup>
           <Button
             color="primary"
-            onClick={() => this.onRadioButtonClick("inches")}
-            active={this.state.rSelected === "inches"}
+            value={"inches"}
+            onClick={this.handleHeightUnitClick}
+            active={heightUnit === "inches"}
           >
             inches
           </Button>
           <Button
             color="primary"
-            onClick={() => this.onRadioButtonClick("centimeters")}
-            active={this.state.rSelected === "centimeters"}
+            value={"centimeters"}
+            onClick={this.handleHeightUnitClick}
+            active={heightUnit === "centimeters"}
           >
             centimeters
           </Button>
         </ButtonGroup>
-        <p>Selected: {this.state.rSelected}</p>
       </div>
     );
   }

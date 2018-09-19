@@ -4,43 +4,44 @@ import { Button, ButtonGroup } from "reactstrap";
 class SkillLevelButton extends Component {
   constructor(props) {
     super(props);
-
-    this.state = { cSelected: [] };
-
-    this.onRadioButtonClick = this.onRadioButtonClick.bind(this);
+    this.handleSkillClick = this.handleSkillClick.bind(this);
   }
 
-  onRadioButtonClick(rSelected) {
-    this.setState({ rSelected });
+  handleSkillClick(e) {
+    this.props.onSkillLevelChange(e.target.value);
   }
 
   render() {
+    const skillLevel = this.props.skillLevel;
+
     return (
       <div>
         <ButtonGroup>
           <Button
             color="primary"
-            onClick={() => this.onRadioButtonClick("beginner")}
-            active={this.state.rSelected === "beginner"}
+            value={"beginner"}
+            onClick={this.handleSkillClick}
+            active={skillLevel === "beginner"}
           >
             beginner
           </Button>
           <Button
             color="primary"
-            onClick={() => this.onRadioButtonClick("intermediate")}
-            active={this.state.rSelected === "intermediate"}
+            value={"intermediate"}
+            onClick={this.handleSkillClick}
+            active={skillLevel === "intermediate"}
           >
             intermediate
           </Button>
           <Button
             color="primary"
-            onClick={() => this.onRadioButtonClick("advanced")}
-            active={this.state.rSelected === "advanced"}
+            value={"advanced"}
+            onClick={this.handleSkillClick}
+            active={skillLevel === "advanced"}
           >
             advanced
           </Button>
         </ButtonGroup>
-        <p>Selected: {this.state.rSelected}</p>
       </div>
     );
   }

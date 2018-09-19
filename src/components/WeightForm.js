@@ -3,28 +3,28 @@ import React, { Component } from "react";
 class WeightForm extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      value: ""
-    };
-
-    this.handleChange = this.handleChange.bind(this);
+    this.handleWeightChange = this.handleWeightChange.bind(this);
   }
 
-  handleChange(event) {
-    this.setState({ value: event.target.value });
+  handleWeightChange(e) {
+    this.props.onWeightChange(e.target.value);
   }
 
   render() {
+    const weight = this.props.weight;
+
     return (
-      <label for="height">
-        Weight:
-        <input
-          type="text"
-          value={this.state.value}
-          onChange={this.handleChange}
-        />
-        <p>Your weight is: {this.state.value}</p>
-      </label>
+      <div>
+        <label form="height">
+          Weight:
+          <input
+            type="text"
+            placeholder="enter your weight"
+            value={weight}
+            onChange={this.handleWeightChange}
+          />
+        </label>
+      </div>
     );
   }
 }
