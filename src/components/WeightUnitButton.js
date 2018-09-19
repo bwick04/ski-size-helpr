@@ -34,7 +34,6 @@ class WeightUnitButton extends Component {
             kg
           </Button>
         </ButtonGroup>
-        <p>Child - Selected: {weightUnit}</p>
       </div>
     );
   }
