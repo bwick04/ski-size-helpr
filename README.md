@@ -3,29 +3,21 @@
 This project was intended for me to learn more about React.<br/>
 This web application helps skiers find the right size skis.
 
+[[https://github.com/bwick04/ski-size-helpr/ski-size-helpr.png]]
 ## Installing
 
-A step by step series of examples that tell you how to get a development env running
-
-1. clone the repository
-
+clone the repository
 ```
 git clone https://github.com/bwick04/ski-size-helpr
 ```
-
-2. navigate to the the repository
-
+navigate to project folder
 ```
 cd ski-size-helpr
 ```
-
-3. run the app on your localhost
-
+start the application on your local host
 ```
 npm start
 ```
-
-End with an example of getting some data out of the system or using it for a little demo
 
 ## To-do
 * Add final calculations of skis
