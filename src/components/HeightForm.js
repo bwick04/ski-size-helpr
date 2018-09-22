@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-class HeightForm extends Component {
+export default class HeightForm extends Component {
   constructor(props) {
     super(props);
     this.handleHeightChange = this.handleHeightChange.bind(this);
@@ -28,5 +28,3 @@ class HeightForm extends Component {
     );
   }
 }
-
-export default HeightForm;

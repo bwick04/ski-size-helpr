@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Button, ButtonGroup } from "reactstrap";
 
-class SkillLevelButton extends Component {
+export default class SkillLevelButton extends Component {
   constructor(props) {
     super(props);
     this.handleSkillClick = this.handleSkillClick.bind(this);
@@ -46,5 +46,3 @@ class SkillLevelButton extends Component {
     );
   }
 }
-
-export default SkillLevelButton;

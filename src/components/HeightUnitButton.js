@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Button, ButtonGroup } from "reactstrap";
 
-class HeightUnitButton extends Component {
+export default class HeightUnitButton extends Component {
   constructor(props) {
     super(props);
     this.handleHeightUnitClick = this.handleHeightUnitClick.bind(this);
@@ -41,5 +41,3 @@ class HeightUnitButton extends Component {
     );
   }
 }
-
-export default HeightUnitButton;

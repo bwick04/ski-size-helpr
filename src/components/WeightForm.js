@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-class WeightForm extends Component {
+export default class WeightForm extends Component {
   constructor(props) {
     super(props);
     this.handleWeightChange = this.handleWeightChange.bind(this);
@@ -28,5 +28,3 @@ class WeightForm extends Component {
     );
   }
 }
-
-export default WeightForm;

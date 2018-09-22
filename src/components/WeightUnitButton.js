@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Button, ButtonGroup } from "reactstrap";
 
-class WeightUnitButton extends Component {
+export default class WeightUnitButton extends Component {
   constructor(props) {
     super(props);
     this.handleWeightUnitClick = this.handleWeightUnitClick.bind(this);
@@ -38,5 +38,3 @@ class WeightUnitButton extends Component {
     );
   }
 }
-
-export default WeightUnitButton;
