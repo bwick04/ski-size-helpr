@@ -19,7 +19,8 @@ npm start
 ```
 
 ## To-do
-* Add final calculations of skis
+* Clean up code
+* Fix up calculations
 
 ## Built With
 
