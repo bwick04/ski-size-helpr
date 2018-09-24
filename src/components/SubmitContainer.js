@@ -19,12 +19,13 @@ export default class SubmitForm extends Component {
       skiSize: " -- "
     };
 
-    // Binding functions with data ???
+    // Binding data with functions within. allows it to setState
     this.handleHeightChange = this.handleHeightChange.bind(this);
     this.handleHeightUnitChange = this.handleHeightUnitChange.bind(this);
     this.handleWeightChange = this.handleWeightChange.bind(this);
     this.handleWeightUnitChange = this.handleWeightUnitChange.bind(this);
     this.handleSkillLevelChange = this.handleSkillLevelChange.bind(this);
+    this.handleClick = this.handleClick.bind(this);
   }
 
   // Call back functions for passing data back to the parent
@@ -67,45 +68,47 @@ export default class SubmitForm extends Component {
   // Should refactor this so its somewhere else to make it cleaner
   // Dislays "SkiSize" component when clicked
   // Calculation for ski size -- VERY arbitrary // not completely accurate
-  handleClick = () => {
+  handleClick(height) {
     let baseSize = 0;
-    if (this.state.height <= 60) {
+    let heightCalc = 0;
+    let weightCalc = 0;
+
+    // Setting the height variable for either KG or LBS
+    if (this.state.heightUnit == "centimeters") {
+      heightCalc = this.state.height / 2.54;
+    } else {
+      heightCalc = this.state.height;
+    }
+
+    console.log(this.state.weightUnit);
+    if (this.state.weightUnit == "kg") {
+      weightCalc = this.state.weight / 0.453592;
+    } else {
+      weightCalc = this.state.weight;
+    }
+
+    console.log(weightCalc);
+    if (heightCalc <= 60) {
       baseSize = 140;
-    } else if (this.state.height == 61) {
+    } else if (heightCalc > 60 && heightCalc <= 62) {
       baseSize = 143;
-    } else if (this.state.height == 62) {
+    } else if (heightCalc > 62 && heightCalc <= 64) {
       baseSize = 147;
-    } else if (this.state.height == 63) {
+    } else if (heightCalc > 64 && heightCalc <= 66) {
       baseSize = 150;
-    } else if (this.state.height == 64) {
+    } else if (heightCalc > 66 && heightCalc <= 68) {
       baseSize = 153;
-    } else if (this.state.height == 65) {
+    } else if (heightCalc > 68 && heightCalc <= 70) {
       baseSize = 156;
-    } else if (this.state.height == 66) {
+    } else if (heightCalc > 70 && heightCalc <= 72) {
       baseSize = 159;
-    } else if (this.state.height == 67) {
+    } else if (heightCalc > 72 && heightCalc <= 74) {
       baseSize = 162;
-    } else if (this.state.height == 68) {
-      baseSize = 165;
-    } else if (this.state.height == 69) {
-      baseSize = 166;
-    } else if (this.state.height == 70) {
-      baseSize = 167;
-    } else if (this.state.height == 71) {
-      baseSize = 168;
-    } else if (this.state.height == 72) {
-      baseSize = 169;
-    } else if (this.state.height == 73) {
-      baseSize = 170;
-    } else if (this.state.height == 74) {
-      baseSize = 174;
-    } else if (this.state.height == 75) {
-      baseSize = 180;
-    } else if (this.state.height == 76) {
+    } else if (heightCalc > 74) {
       baseSize = 180;
     }
 
-    if (this.state.weight >= 170) {
+    if (weightCalc >= 160) {
       baseSize += 5;
     }
 
@@ -118,7 +121,7 @@ export default class SubmitForm extends Component {
     }
 
     this.setState({ skiSize: baseSize });
-  };
+  }
 
   render() {
     return (
