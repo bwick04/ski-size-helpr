@@ -74,14 +74,14 @@ export default class SubmitForm extends Component {
     let weightCalc = 0;
 
     // Setting the height variable for either KG or LBS
-    if (this.state.heightUnit == "centimeters") {
+    if (this.state.heightUnit === "centimeters") {
       heightCalc = this.state.height / 2.54;
     } else {
       heightCalc = this.state.height;
     }
 
     console.log(this.state.weightUnit);
-    if (this.state.weightUnit == "kg") {
+    if (this.state.weightUnit === "kg") {
       weightCalc = this.state.weight / 0.453592;
     } else {
       weightCalc = this.state.weight;
@@ -112,11 +112,11 @@ export default class SubmitForm extends Component {
       baseSize += 5;
     }
 
-    if (this.state.skillLevel == "beginner") {
+    if (this.state.skillLevel === "beginner") {
       baseSize -= 3;
-    } else if (this.state.skillLevel == "intermediate") {
+    } else if (this.state.skillLevel === "intermediate") {
       baseSize += 1;
-    } else if (this.state.skillLevel == "advanced") {
+    } else if (this.state.skillLevel === "advanced") {
       baseSize += 3;
     }
 
