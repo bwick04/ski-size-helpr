@@ -2,6 +2,8 @@
 
 This web application helps skiers find the right size skis.
 
+https://bwick04.github.io/ski-size-helpr/
+
 ![alt_text](https://github.com/bwick04/ski-size-helpr/blob/master/ski-size-helpr.png)
 ## Installing
 
