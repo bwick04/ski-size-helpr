@@ -15,15 +15,15 @@ export default class WeightForm extends Component {
 
     return (
       <div>
-        <label form="height">
-          Weight:
-          <input
-            type="text"
-            placeholder="enter your weight"
-            value={weight}
-            onChange={this.handleWeightChange}
-          />
+        <label className="form-container__label" form="weight">
+          Weight:{" "}
         </label>
+        <input
+          type="text"
+          placeholder="enter your weight"
+          value={weight}
+          onChange={this.handleWeightChange}
+        />
       </div>
     );
   }

@@ -1,23 +1,27 @@
 import React, { Component } from "react";
 import "./App.css";
+
 import SubmitContainer from "./components/SubmitContainer";
+import Titles from "./components/Titles";
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <h1 className="App-title">Ski Size Helpr</h1>
-        </header>
-        <br />
-        <h3>
-          This website is designed to help you find the right size skis to add
-          to that quiver!
-        </h3>
-        <hr className="horizontal-line" />
-        <br />
-        <SubmitContainer />
-        <br />
+      <div>
+        <div className="wrapper">
+          <div className="main">
+            <div className="container">
+              <div className="row">
+                <div className="col-md-5 title-container">
+                  <Titles />
+                </div>
+                <div className="col-md-7 form-container">
+                  <SubmitContainer />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     );
   }

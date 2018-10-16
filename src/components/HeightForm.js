@@ -15,15 +15,15 @@ export default class HeightForm extends Component {
 
     return (
       <div>
-        <label form="height">
+        <label className="form-container__label" form="height">
           Height:
-          <input
-            type="text"
-            placeholder="enter your height"
-            value={height}
-            onChange={this.handleHeightChange}
-          />
         </label>
+        <input
+          type="text"
+          placeholder="enter your height"
+          value={height}
+          onChange={this.handleHeightChange}
+        />
       </div>
     );
   }

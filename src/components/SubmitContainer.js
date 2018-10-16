@@ -125,7 +125,7 @@ export default class SubmitForm extends Component {
 
   render() {
     return (
-      <div>
+      <div className="submit-container">
         <HeightForm
           height={this.state.height}
           onHeightChange={this.handleHeightChange}
