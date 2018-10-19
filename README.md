@@ -21,8 +21,8 @@ npm start
 ```
 
 ## To-do
-* Clean up code
-* Fix up calculations
+* Add 'gender' button
+* Fix calculations
 
 ## Built With
 
