@@ -22,7 +22,9 @@ npm start
 
 ## To-do
 * Add 'gender' button
-* Fix calculations
+* Adjust calculations
+* Add error handling
+* Clean up code
 
 ## Built With
 
